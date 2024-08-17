@@ -2,6 +2,7 @@
 
 namespace MyMauiApp;
 
+[MauiMarkup(typeof(CardView))]
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()

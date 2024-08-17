@@ -6,6 +6,6 @@ public partial class App : Application
     {
         this
         .Resources(AppStyles.Default)
-        .MainPage(new Ders2());
+        .MainPage(new Ders29());
     }
 }
