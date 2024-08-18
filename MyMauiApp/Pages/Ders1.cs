@@ -1,8 +1,14 @@
-﻿namespace MyMauiApp.Pages;
+﻿using System.Diagnostics;
 
-public partial class Ders1 : FmgLibContentPage
+namespace MyMauiApp.Pages;
+
+public partial class Ders1 : ContentPage, IFmgLibHotReload
 {
-    public override void Build()
+    public Ders1()
+    {
+        //this.InitializeHotReload();
+    }
+    public void Build()
     {
         this
         .Content(
@@ -11,10 +17,8 @@ public partial class Ders1 : FmgLibContentPage
             .CharacterSpacing(2)
             .FontSize(30)
             .FontAttributes(Italic)
-            .TextColor(Red)
+            .TextColor(Green)
             .TextCenter()
-            //.HorizontalTextAlignment(TextAlignment.Center)
-            //.VerticalTextAlignment(TextAlignment.Center)
         );
     }
 }
