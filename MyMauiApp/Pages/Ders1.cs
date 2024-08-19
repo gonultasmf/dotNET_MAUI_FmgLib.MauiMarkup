@@ -1,12 +1,10 @@
-﻿using System.Diagnostics;
-
-namespace MyMauiApp.Pages;
+﻿namespace MyMauiApp.Pages;
 
 public partial class Ders1 : ContentPage, IFmgLibHotReload
 {
     public Ders1()
     {
-        //this.InitializeHotReload();
+        this.InitializeHotReload();
     }
     public void Build()
     {
