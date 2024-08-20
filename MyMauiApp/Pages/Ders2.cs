@@ -5,6 +5,7 @@ public partial class Ders2 : FmgLibContentPage
     public override void Build()
     {
         this
+        .Title("Ders 2")
         .Content(
             new Button()
             .Text("Click Me")

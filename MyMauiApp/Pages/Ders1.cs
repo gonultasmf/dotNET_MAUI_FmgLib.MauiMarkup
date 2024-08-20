@@ -9,6 +9,7 @@ public partial class Ders1 : ContentPage, IFmgLibHotReload
     public void Build()
     {
         this
+        .Title("Ders 1")
         .Content(
             new Label()
             .Text("FmgLib.MauiMarkup")

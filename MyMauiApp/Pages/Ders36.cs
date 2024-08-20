@@ -1,31 +1,45 @@
 ﻿namespace MyMauiApp.Pages;
 
-public partial class Ders36 : FmgLibContentPage
+public partial class Ders36 : ContentPage, IFmgLibHotReload
 {
     public Ders36()
     {
-        
+        this.InitializeHotReload();
     }
 
-    private void BtnClicked(object sender, EventArgs e)
-    {
-        var button = sender as Button;
-        button.TextColor = Yellow;
-    }
-    public override void Build()
+    public void Build()
     {
         this
-        .BackgroundColor(LightGray)
+        //.BackgroundColor(Red)
         //.BackgroundImageSource("dotnet_bot.png")
-        .HideSoftInputOnTapped(true)
+        .Title("Content Page")
+        .Padding(50)
         .Content(
-            new Entry()
-            .Text("Click Me")
-            .SizeRequest(160, 60)
-            .TextColor(Red)
-            .FontSize(20)
-            .FontAttributes(Bold)
-            .BackgroundColor(Yellow)
+            new VerticalStackLayout()
+            .AlignCenterLeft()
+            .Spacing(10)
+            .Children(
+                new Label()
+                .Text("Content Page")
+                .TextColor(Black)
+                .FontAttributes(Bold)
+                .FontSize(30)
+                .Center(),
+
+                new Label()
+                .Text("Content Page")
+                .TextColor(Black)
+                .FontAttributes(Bold)
+                .FontSize(30)
+                .Center(),
+
+                new Label()
+                .Text("Content Page")
+                .TextColor(Black)
+                .FontAttributes(Bold)
+                .FontSize(30)
+                .Center()
+            )
         );
     }
 }
