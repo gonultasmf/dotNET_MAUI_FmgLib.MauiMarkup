@@ -10,6 +10,7 @@ public partial class Ders1 : ContentPage, IFmgLibHotReload
     {
         this
         .Title("Ders 1")
+        .IconImageSource("dotnet_bot.png")
         .Content(
             new Label()
             .Text("FmgLib.MauiMarkup")

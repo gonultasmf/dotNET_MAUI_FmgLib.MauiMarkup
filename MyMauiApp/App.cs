@@ -1,11 +1,21 @@
 ﻿namespace MyMauiApp;
 
-public partial class App : Application
+public partial class App : Application, IFmgLibHotReload
 {
     public App()
     {
+        this.InitializeHotReload();
+    }
+
+    public void Build()
+    {
         this
         .Resources(AppStyles.Default)
-        .MainPage(new Ders37());
+        .MainPage(
+            //new NavigationPage(new Ders2())
+            //.BarBackgroundColor(Red)
+            //.BarTextColor(Yellow)
+            new AppShell()
+        );
     }
 }

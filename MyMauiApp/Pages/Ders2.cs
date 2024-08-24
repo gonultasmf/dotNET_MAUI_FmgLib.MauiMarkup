@@ -6,6 +6,9 @@ public partial class Ders2 : FmgLibContentPage
     {
         this
         .Title("Ders 2")
+        .NavigationPageHasNavigationBar(true)
+        .NavigationPageBackButtonTitle("Deneme")
+        .IconImageSource("dotnet_bot.png")
         .Content(
             new Button()
             .Text("Click Me")
@@ -18,11 +21,15 @@ public partial class Ders2 : FmgLibContentPage
             .FontAttributes(Bold)
             .OnClicked(BtnClicked)
         );
+        //NavigationPage.SetHasBackButton(this, true);
     }
 
-    private void BtnClicked(object sender, EventArgs e)
+    private async void BtnClicked(object sender, EventArgs e)
     {
         var button = sender as Button;
         button.TextColor = Yellow;
+
+        //await Navigation.PushAsync(new Ders3());
+        await Shell.Current.GoToAsync($"Ders3?Dene=denemeamacli");
     }
 }
