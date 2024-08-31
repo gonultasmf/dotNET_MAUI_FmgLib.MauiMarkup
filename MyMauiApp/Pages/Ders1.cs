@@ -6,6 +6,7 @@ public partial class Ders1 : ContentPage, IFmgLibHotReload
     {
         this.InitializeHotReload();
     }
+
     public void Build()
     {
         this

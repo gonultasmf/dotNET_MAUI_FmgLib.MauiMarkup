@@ -1,4 +1,6 @@
-﻿namespace MyMauiApp;
+﻿using FmgLib.MauiMarkup;
+
+namespace MyMauiApp;
 
 public partial class AppShell : Shell
 {
@@ -113,7 +115,13 @@ public partial class AppShell : Shell
                 .Title("Ders5")
                 .Icon("dotnet_bot.png")
                 .ContentTemplate(() => new Ders5())
-                .Route(nameof(Ders5))
+                .Route(nameof(Ders5)),
+
+                new ShellContent()
+                .Title("Ders39")
+                .Icon("dotnet_bot.png")
+                .ContentTemplate(() => new Ders39())
+                .Route(nameof(Ders39))
             ),
 
             new ShellContent()

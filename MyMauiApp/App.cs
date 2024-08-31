@@ -15,7 +15,13 @@ public partial class App : Application, IFmgLibHotReload
             //new NavigationPage(new Ders2())
             //.BarBackgroundColor(Red)
             //.BarTextColor(Yellow)
-            new AppShell()
+            //.HasBackButton(true)
+            //.IconColor(White)
+            //.IconImageSource("")
+            //.TitleIconImageSource("")
+            //.TitleView(new Button())
+            //new AppShell()
+            new Ders1()
         );
     }
 }

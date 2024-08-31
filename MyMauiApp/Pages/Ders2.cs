@@ -20,6 +20,20 @@ public partial class Ders2 : FmgLibContentPage
             .FontSize(20)
             .FontAttributes(Bold)
             .OnClicked(BtnClicked)
+            .VisualStateGroups(new VisualStateGroupList
+            {
+                new VisualStateGroup()
+                .Name("CommonStates")
+                .States(
+                    new VisualState<Button> (VisualStates.VisualElement.Normal, e => e
+                    .TextColor(e => e.OnLight(White).OnDark(AppColors.Primary))
+                    .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(White))),
+
+                    new VisualState<Button> (VisualStates.VisualElement.Disabled, e => e
+                    .TextColor(e => e.OnLight(AppColors.Gray950).OnDark(AppColors.Gray200))
+                    .BackgroundColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600)))
+                )
+            })
         );
         //NavigationPage.SetHasBackButton(this, true);
     }
