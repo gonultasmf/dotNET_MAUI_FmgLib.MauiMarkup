@@ -1,6 +1,6 @@
-﻿namespace MyMauiApp.Pages;
+namespace MyMauiApp.Pages;
 
-public partial class Ders39 : ContentPage, IFmgLibHotReload
+public class Ders39 : ContentPage, IFmgLibHotReload
 {
     public Ders39()
     {
@@ -10,44 +10,42 @@ public partial class Ders39 : ContentPage, IFmgLibHotReload
     public void Build()
     {
         this
+        //.Resources(
+        //    new ResourceDictionary
+        //    {
+        //        Color temp = new Color(10,20,40)
+        //    }
+        //)
+        .Title("Ders39")
         .Content(
-            new StackLayout()
-            .Margin(30)
+            new Grid()
+            .RowDefinitions(e => e.Star().Star())
+            .Center()
             .Children(
-                new CardView()
-                .BackgroundColor(DarkGray)
-                .ControlTemplate(template)
-                .CardTitle("Deneme")
-                .CardDescription("Deneme amaçlıdır."),
+                new Label()
+                .Text(".NET MAUI!")
+                .FontSize(30)
+                .FontAttributes(Bold)
+                .Shadow(
+                    new Shadow()
+                    .Brush(Red)
+                    .Opacity(0.5f)
+                    .Radius(10)
+                    .Offset(new Point(5,5))
+                ),
 
-                new CardView()
-                .BackgroundColor(DarkGray)
-                .ControlTemplate(template)
-                .CardTitle("Test")
-                .CardDescription("Test amaçlıdır.")
+                new Image()
+                .Row(1)
+                .Source("dotnet_bot.png")
+                .SizeRequest(200,100)
+                .Shadow(
+                    new Shadow()
+                    .Brush(Yellow)
+                    .Opacity(0.5f)
+                    .Radius(20)
+                    .Offset(new Point(15, 15))
+                )
             )
         );
     }
-
-    ControlTemplate template = new ControlTemplate(() =>
-        new Frame()
-        .SizeRequest(300)
-        .Content(
-            new Grid()
-                .ColumnDefinitions(e => e.Auto().Star())
-                .Children(
-                    new Image()
-                    .Source("dotnet_bot.png")
-                    .SizeRequest(120),
-
-                    new Label()
-                    .Text(e => e.Path("CardTitle"))
-                    .TextColor(White)
-                    .FontAttributes(Bold)
-                    .FontSize(20)
-                    .Column(1)
-                    .CenterVertical()
-                )
-        )
-    );
 }

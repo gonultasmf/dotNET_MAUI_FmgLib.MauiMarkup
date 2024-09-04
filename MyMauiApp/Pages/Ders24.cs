@@ -8,9 +8,9 @@ public partial class Ders24 : FmgLibContentPage
 
     public Ders24()
     {
-        BindingContext = this;
-        //LoadData();
+        LoadData();
         LoadDataGroup();
+        BindingContext = this;
     }
 
     public override void Build()
