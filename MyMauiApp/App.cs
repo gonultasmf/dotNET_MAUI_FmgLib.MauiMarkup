@@ -1,4 +1,6 @@
-﻿namespace MyMauiApp;
+﻿using Microsoft.Maui.Controls.StyleSheets;
+
+namespace MyMauiApp;
 
 public partial class App : Application, IFmgLibHotReload
 {
@@ -20,7 +22,7 @@ public partial class App : Application, IFmgLibHotReload
             //.IconImageSource("")
             //.TitleIconImageSource("")
             //.TitleView(new Button())
-            new Ders40()
+            new Ders1()
         );
     }
 }

@@ -22,17 +22,23 @@ public class Ders39 : ContentPage, IFmgLibHotReload
             .RowDefinitions(e => e.Star().Star())
             .Center()
             .Children(
-                new Label()
-                .Text(".NET MAUI!")
-                .FontSize(30)
-                .FontAttributes(Bold)
-                .Shadow(
-                    new Shadow()
-                    .Brush(Red)
-                    .Opacity(0.5f)
-                    .Radius(10)
-                    .Offset(new Point(5,5))
-                ),
+                //new Label()
+                //.Text(".NET MAUI!")
+                //.FontSize(30)
+                //.FontAttributes(Bold)
+                //.Shadow(
+                //    new Shadow()
+                //    .Brush(Red)
+                //    .Opacity(0.5f)
+                //    .Radius(10)
+                //    .Offset(new Point(5,5))
+                //),
+
+                new Button()
+                .Text("DENEME")
+                .FontFamily("Sevillana")
+                .FontSize(20)
+                .FontAttributes(Bold | Italic),
 
                 new Image()
                 .Row(1)

@@ -10,8 +10,13 @@ public partial class Ders7 : FmgLibContentPage
             .Center()
             .Children(
                 new ActivityIndicator()
+                .Resources(new ResourceDictionary
+                {
+                    new Style<ActivityIndicator>(e => 
+                        e.Color(Purple))
+                })
                 .IsRunning(true)
-                .Color(Red)
+                //.Color(Red)
                 .SizeRequest(100)
                 .OnLoaded(async (sender, e) =>
                 {

@@ -9,7 +9,7 @@ namespace MyMauiApp
             // "ActivityIndicator"
         
             new Style<ActivityIndicator>(e => e
-                .Color(e => e.OnLight(AppColors.Primary).OnDark(White))),
+                .Color(e => e.OnLight(Pink).OnDark(White))),
         
             // "IndicatorView"
 

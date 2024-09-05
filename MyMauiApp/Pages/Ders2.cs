@@ -26,12 +26,12 @@ public partial class Ders2 : FmgLibContentPage
                 .Name("CommonStates")
                 .States(
                     new VisualState<Button> (VisualStates.VisualElement.Normal, e => e
-                    .TextColor(e => e.OnLight(White).OnDark(AppColors.Primary))
+                    .TextColor(e => e.OnLight(Brown).OnDark(Yellow))
                     .BackgroundColor(e => e.OnLight(AppColors.Primary).OnDark(White))),
 
-                    new VisualState<Button> (VisualStates.VisualElement.Disabled, e => e
-                    .TextColor(e => e.OnLight(AppColors.Gray950).OnDark(AppColors.Gray200))
-                    .BackgroundColor(e => e.OnLight(AppColors.Gray200).OnDark(AppColors.Gray600)))
+                    new VisualState<Button> (VisualStates.Button.Pressed, e => e
+                    .TextColor(e => e.OnLight(Yellow).OnDark(Red))
+                    .BackgroundColor(e => e.OnLight(LightGreen).OnDark(Aqua)))
                 )
             })
         );
@@ -44,6 +44,6 @@ public partial class Ders2 : FmgLibContentPage
         button.TextColor = Yellow;
 
         //await Navigation.PushAsync(new Ders3());
-        await Shell.Current.GoToAsync($"Ders3?Dene=denemeamacli");
+        //await Shell.Current.GoToAsync($"Ders3?Dene=denemeamacli");
     }
 }
