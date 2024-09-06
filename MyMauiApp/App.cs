@@ -22,7 +22,7 @@ public partial class App : Application, IFmgLibHotReload
             //.IconImageSource("")
             //.TitleIconImageSource("")
             //.TitleView(new Button())
-            new Ders1()
+            new Ders41()
         );
     }
 }
