@@ -10,6 +10,9 @@ public partial class Ders5 : FmgLibContentPage
             .Center()
             .Children(
                 new Image()
+                .SemanticDescription("Image Deneme")
+                .SemanticHint("Image Test")
+                .SemanticHeadingLevel(SemanticHeadingLevel.Level4)
                 .Source(
                     new UriImageSource()
                     .Uri(new Uri("https://aka.ms/campus.jpg"))
@@ -19,10 +22,13 @@ public partial class Ders5 : FmgLibContentPage
                 //.Aspect(Aspect.AspectFill)
 
                 new Button()
+                .SemanticDescription("Button Deneme")
+                .SemanticHint("Button Test")
+                .SemanticHeadingLevel(SemanticHeadingLevel.Level4)
                 .Text("Click")
-                .OnClicked(async (sender, e) =>
+                .OnClicked((sender, e) =>
                 {
-                    await Shell.Current.GoToAsync("..");
+                    //await Shell.Current.GoToAsync("..");
                 })
             )
         );
