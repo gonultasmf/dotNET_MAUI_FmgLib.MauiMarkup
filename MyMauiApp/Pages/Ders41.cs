@@ -1,10 +1,9 @@
-using Microsoft.Maui.Controls.Shapes;
+using Path = Microsoft.Maui.Controls.Shapes.Path;
 
 namespace MyMauiApp.Pages;
 
 public class Ders41 : ContentPage, IFmgLibHotReload
 {
-    Image image;
     public Ders41()
     {
         this.InitializeHotReload();
@@ -15,48 +14,116 @@ public class Ders41 : ContentPage, IFmgLibHotReload
         this
         .Title("Ders41")
         .Content(
-            new VerticalStackLayout()
-            .Center()
-            .Children(
-                new Image()
-                .Assign(out image)
-                .Source("dotnet_bot.png")
-                .SizeRequest(200)
-                .OnLoaded(async (sender, e) =>
-                {
-                    await Rotate();
-                })
+            new ScrollView()
+            .Content(
+                new VerticalStackLayout()
+                .BackgroundColor(Pink)
+                .Padding(10)
+                .Center()
+                .Children(
+                    new Line()
+                    .X1(0)
+                    .X2(130)
+                    .Y1(0)
+                    .Y2(130)
+                    .Stroke(Blue)
+                    .StrokeThickness(5)
+                    .StrokeDashArray(1, 1),
+
+                    new Rectangle()
+                    .Fill(Blue)
+                    .Stroke(Red)
+                    .StrokeThickness(3)
+                    .RadiusX(50)
+                    .RadiusY(10)
+                    .SizeRequest(200, 100),
+
+                    new Ellipse()
+                    .Fill(Green)
+                    .Stroke(Purple)
+                    .StrokeThickness(7)
+                    .SizeRequest(200, 150),
+
+                    new Polygon()
+                    .Fill(Black)
+                    .Stroke(Yellow)
+                    .StrokeThickness(3)
+                    .FillRule(FillRule.Nonzero)
+                    .Points(
+                        new Point(0, 48),
+                        new Point(0, 144),
+                        new Point(96, 150),
+                        new Point(100, 0),
+                        new Point(192, 0),
+                        new Point(192, 96),
+                        new Point(50, 96),
+                        new Point(48, 192),
+                        new Point(150, 200),
+                        new Point(144, 48)
+                    ),
+
+                    new Polyline()
+                    .Fill(Black)
+                    .Stroke(Yellow)
+                    .StrokeThickness(3)
+                    .FillRule(FillRule.Nonzero)
+                    .Points(
+                        new Point(0, 48),
+                        new Point(0, 144),
+                        new Point(96, 150),
+                        new Point(100, 0),
+                        new Point(192, 0),
+                        new Point(192, 96),
+                        new Point(50, 96),
+                        new Point(48, 192),
+                        new Point(150, 200),
+                        new Point(144, 48)
+                    ),
+
+                    new Path()
+                    .Stroke(Black)
+                    .StrokeThickness(5)
+                    .Aspect(Stretch.UniformToFill)
+                    .AlignLeft()
+                    .Data((Geometry)new PathGeometryConverter().ConvertFromInvariantString("M 10,100 L 100,100 100,50Z"))
+                    //.Data(
+                    //    new PathGeometry().Figures(
+                    //        new PathFigure()
+                    //        .IsClosed(true)
+                    //        .StartPoint(10,100)
+                    //        .Segments(
+                    //            new LineSegment(new Point(100,100)),
+                    //            new LineSegment(new Point(100,50))
+
+                    //        )
+                    //    )
+                    //)
+                )
             )
         );
     }
-
-    public async Task Rotate()
-    {
-        await image.RotateTo(360, 2000);
-        await image.RelRotateTo(360, 2000);
-        await image.ScaleTo(1, 2000);
-        //await image.RelScaleTo(2, 2000);
-        await image.TranslateTo(-100, 0, 1000);    // Move image left
-        await image.TranslateTo(-100, -100, 1000); // Move image diagonally up and left
-        await image.TranslateTo(100, 100, 2000);   // Move image diagonally down and right
-        await image.TranslateTo(0, 100, 1000);     // Move image left
-        await image.TranslateTo(0, 0, 1000);       // Move image up
-        image.Opacity = 0;
-        await image.FadeTo(1, 4000);
-        image.Rotation = 0;
-        await Task.WhenAny<bool>
-        (
-          image.RotateTo(360, 4000),
-          image.ScaleTo(2, 2000)
-        );
-        await image.ScaleTo(1, 2000);
-        // 10 minute animation
-        uint duration = 1 * 60 * 1000;
-        await Task.WhenAll
-        (
-          image.RotateTo(307 * 360, duration),
-          image.RotateXTo(251 * 360, duration),
-          image.RotateYTo(199 * 360, duration)
-        );
-    }
 }
+/*
+<Path Stroke="Black"
+      Aspect="Uniform"
+      HorizontalOptions="Start">
+    <Path.Data>
+        <PathGeometry>
+            <PathGeometry.Figures>
+                <PathFigureCollection>
+                    <PathFigure IsClosed="True"
+                                StartPoint="10,100">
+                        <PathFigure.Segments>
+                            <PathSegmentCollection>
+                                <LineSegment Point="100,100" />
+                                <LineSegment Point="100,50" />
+                            </PathSegmentCollection>
+                        </PathFigure.Segments>
+                    </PathFigure>
+                </PathFigureCollection>
+            </PathGeometry.Figures>
+        </PathGeometry>
+    </Path.Data>
+</Path>
+ 
+ */

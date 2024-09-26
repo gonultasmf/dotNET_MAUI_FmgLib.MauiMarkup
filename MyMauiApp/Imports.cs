@@ -4,6 +4,7 @@ global using FmgLib.MauiMarkup.Core;
 
 global using MyMauiApp;
 global using MyMauiApp.Pages;
+global using Microsoft.Maui.Controls.Shapes;
 
 
 global using static Microsoft.Maui.Controls.FontAttributes;

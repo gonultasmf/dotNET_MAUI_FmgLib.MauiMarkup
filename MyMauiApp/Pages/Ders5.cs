@@ -1,8 +1,13 @@
 ﻿namespace MyMauiApp.Pages;
 
-public partial class Ders5 : FmgLibContentPage
+public partial class Ders5 : ContentPage, IFmgLibHotReload
 {
-    public override void Build()
+    public Ders5()
+    {
+        this.InitializeHotReload();
+    }
+
+    public void Build()
     {
         this
         .Content(
@@ -28,6 +33,7 @@ public partial class Ders5 : FmgLibContentPage
                 .Text("Click")
                 .OnClicked((sender, e) =>
                 {
+                    
                     //await Shell.Current.GoToAsync("..");
                 })
             )

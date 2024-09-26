@@ -33,7 +33,7 @@ public partial class AppShell : Shell
         this
         .ShellNavBarIsVisible(false)
         .FlyoutHeaderBehavior(FlyoutHeaderBehavior.Fixed)
-        .FlyoutIcon("dotnet_bot.png")
+        //.FlyoutIcon("dotnet_bot.png")
         .FlyoutBackdrop(Red)
         .FlyoutBehavior(FlyoutBehavior.Disabled)
         .FlyoutHeader(
@@ -82,54 +82,58 @@ public partial class AppShell : Shell
             )
         )
         .Items(
-            new FlyoutItem()
-            .Title("Denem")
-            .FlyoutDisplayOptions(FlyoutDisplayOptions.AsMultipleItems)
-            .Items(
-                new Tab()
-                .Title("Domestic")
-                .Icon("dotnet_bot.png")
-                .Items(
-                    new ShellContent()
-                    .Title("Ders1")
-                    .Icon("dotnet_bot.png")
-                    .ContentTemplate(() => new Ders1()),
-
-                    new ShellContent()
-                    .Title("Ders2")
-                    .Icon("dotnet_bot.png")
-                    .ContentTemplate(() => new Ders2())
-                ),
-
-                new ShellContent()
-                .Title("Ders3")
-                .Icon("dotnet_bot.png")
-                .ContentTemplate(() => new Ders3()),
-
-                new ShellContent()
-                .Title("Ders4")
-                .Icon("dotnet_bot.png")
-                .ContentTemplate(() => new Ders4()),
-
-                new ShellContent()
-                .Title("Ders5")
-                .Icon("dotnet_bot.png")
-                .ContentTemplate(() => new Ders5())
-                .Route(nameof(Ders5))
-            ),
-
             new ShellContent()
-            .Title("Ders6")
+            .Title("Ders42")
             .Icon("dotnet_bot.png")
-            .ContentTemplate(() => new Ders6()),
+            .ContentTemplate(() => new Ders42())
+        //new FlyoutItem()
+        //.Title("Denem")
+        //.FlyoutDisplayOptions(FlyoutDisplayOptions.AsMultipleItems)
+        //.Items(
+        //    new Tab()
+        //    .Title("Domestic")
+        //    .Icon("dotnet_bot.png")
+        //    .Items(
+        //        new ShellContent()
+        //        .Title("Ders1")
+        //        .Icon("dotnet_bot.png")
+        //        .ContentTemplate(() => new Ders1()),
 
-            new MenuItem()
-            .Text("Help")
-            .IconImageSource("dotnet_bot.png")
-            .OnClicked(async (sender, e) =>
-            {
-                await Browser.OpenAsync("https://learn.microsoft.com/dotnet/maui/fundamentals/shell");
-            })
+        //        new ShellContent()
+        //        .Title("Ders2")
+        //        .Icon("dotnet_bot.png")
+        //        .ContentTemplate(() => new Ders2())
+        //    ),
+
+        //    new ShellContent()
+        //    .Title("Ders3")
+        //    .Icon("dotnet_bot.png")
+        //    .ContentTemplate(() => new Ders3()),
+
+        //    new ShellContent()
+        //    .Title("Ders4")
+        //    .Icon("dotnet_bot.png")
+        //    .ContentTemplate(() => new Ders4()),
+
+        //    new ShellContent()
+        //    .Title("Ders5")
+        //    .Icon("dotnet_bot.png")
+        //    .ContentTemplate(() => new Ders5())
+        //    .Route(nameof(Ders5))
+        //),
+
+        //new ShellContent()
+        //.Title("Ders6")
+        //.Icon("dotnet_bot.png")
+        //.ContentTemplate(() => new Ders6()),
+
+        //new MenuItem()
+        //.Text("Help")
+        //.IconImageSource("dotnet_bot.png")
+        //.OnClicked(async (sender, e) =>
+        //{
+        //    await Browser.OpenAsync("https://learn.microsoft.com/dotnet/maui/fundamentals/shell");
+        //})
         );
         
 
