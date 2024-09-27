@@ -31,6 +31,7 @@ public partial class Ders23 : FmgLibContentPage
                     .BackgroundColor(LightGray)
                     .TextCenterLeft()
                 )
+                .ContextActions(new MenuItem().Text("deneme"))
             ))
             //.RowHeight(80)
             .ItemsSource(e => e.Path("AnimalGroups"))
@@ -72,6 +73,7 @@ public partial class Ders23 : FmgLibContentPage
                 .ImageSource(e => e.Path("ImageUrl"))
                 .Text(e => e.Path("Name"))
                 .Detail(e => e.Path("Details"))
+                .ContextActions(new MenuItem().Text("deneme"))
             ))
             .OnRefreshing(async (sender, e) =>
             {

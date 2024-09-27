@@ -3,6 +3,7 @@
 namespace MyMauiApp;
 
 [MauiMarkup(typeof(CardView), typeof(MyView))]
+[MauiMarkupAttachedProp(typeof(AttachedNumericValidationBehavior), "AttachBehaviorProperty", typeof(bool), typeof(BindableObject))]
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()

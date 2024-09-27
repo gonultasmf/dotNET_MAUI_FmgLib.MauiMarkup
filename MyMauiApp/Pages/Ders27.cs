@@ -6,13 +6,53 @@ public partial class Ders27 : FmgLibContentPage
 
     public Ders27()
     {
-        BindingContext = this;
         LoadData();
+        BindingContext = this;
     }
+    MenuFlyoutItem item;
 
     public override void Build()
     {
         this
+        .MenuBarItems(
+            new MenuBarItem()
+            {
+                new MenuFlyoutItem()
+                .Text("Exit")
+            }
+            .Text("File"),
+
+            new MenuBarItem()
+            {
+                new MenuFlyoutSubItem()
+                {
+                    new MenuFlyoutItem().Assign(out item).OnClicked((sender, e) =>
+                    {
+                        this.BackgroundColor = Colors.Blue;
+                    }).Text("Malatya"),
+                    new MenuFlyoutItem().Text("Erzurum"),
+                    new MenuFlyoutItem().Text("Istanbul"),
+                    new MenuFlyoutItem().Text("Aydın"),
+                    new MenuFlyoutItem().Text("Hakkari"),
+                    new MenuFlyoutItem().Text("Trabzon")
+                }
+                .Text("Change Location"),
+
+                new MenuFlyoutSeparator(),
+
+                new MenuFlyoutSubItem()
+                {
+                    new MenuFlyoutItem().Text("Malatya"),
+                    new MenuFlyoutItem().Text("Erzurum"),
+                    new MenuFlyoutItem().Text("Istanbul"),
+                    new MenuFlyoutItem().Text("Aydın"),
+                    new MenuFlyoutItem().Text("Hakkari"),
+                    new MenuFlyoutItem().Text("Trabzon")
+                }
+                .Text("Change Deneme")
+            }
+            .Text("Locataions")
+        )
         .Content(
             new CollectionView()
             .ItemsSource(e => e.Path("Animals"))
@@ -68,6 +108,12 @@ public partial class Ders27 : FmgLibContentPage
                 )
             ))
         );
+
+        item.KeyboardAccelerators.Add(new KeyboardAccelerator
+        {
+            Modifiers = KeyboardAcceleratorModifiers.Ctrl,
+            Key = "X"
+        });
     }
 
     private void LoadData()
