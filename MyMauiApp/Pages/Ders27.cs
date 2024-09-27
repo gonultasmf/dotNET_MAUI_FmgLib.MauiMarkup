@@ -9,7 +9,6 @@ public partial class Ders27 : FmgLibContentPage
         LoadData();
         BindingContext = this;
     }
-    MenuFlyoutItem item;
 
     public override void Build()
     {
@@ -26,10 +25,18 @@ public partial class Ders27 : FmgLibContentPage
             {
                 new MenuFlyoutSubItem()
                 {
-                    new MenuFlyoutItem().Assign(out item).OnClicked((sender, e) =>
+                    new MenuFlyoutItem()
+                    .OnClicked((sender, e) =>
                     {
                         this.BackgroundColor = Colors.Blue;
-                    }).Text("Malatya"),
+                    })
+                    .KeyboardAccelerators(
+                        new KeyboardAccelerator()
+                        .Key("X")
+                        .Modifiers(KeyboardAcceleratorModifiers.Ctrl)
+                    )
+                    .Text("Malatya"),
+
                     new MenuFlyoutItem().Text("Erzurum"),
                     new MenuFlyoutItem().Text("Istanbul"),
                     new MenuFlyoutItem().Text("Aydın"),
@@ -108,12 +115,6 @@ public partial class Ders27 : FmgLibContentPage
                 )
             ))
         );
-
-        item.KeyboardAccelerators.Add(new KeyboardAccelerator
-        {
-            Modifiers = KeyboardAcceleratorModifiers.Ctrl,
-            Key = "X"
-        });
     }
 
     private void LoadData()
