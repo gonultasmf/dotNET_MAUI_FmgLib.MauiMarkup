@@ -21,7 +21,7 @@ public partial class App : Application, IFmgLibHotReload
             //.TitleIconImageSource("")
             //.TitleView(new Button())
             //new AppShell()
-            new Ders5()
+            new Ders44()
         );
     }
 }
