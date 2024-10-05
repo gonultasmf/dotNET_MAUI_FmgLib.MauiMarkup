@@ -68,6 +68,8 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Sevillana-Regular.ttf" />
+	  <None Remove="resources\raw\Deneme.json" />
+	  <None Remove="resources\raw\Localization.json" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,0 +1,10 @@
+﻿{
+  "Hello": {
+    "tr-TR": "Merhaba Dünya!",
+    "en-US": "Hello World!"
+  },
+  "Msg": {
+    "tr-TR": "Deneme amaçlı yapılmıştır.",
+    "en-US": "It was made for testing purposes."
+  }
+}
