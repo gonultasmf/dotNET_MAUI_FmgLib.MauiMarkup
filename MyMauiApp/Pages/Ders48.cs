@@ -30,11 +30,17 @@ public class Ders48 : ContentPage, IFmgLibHotReload
 
                 new Button()
                 .Text(e => e.Translate("Change"))
-                .OnClicked((s, e) =>
+                .OnClicked( async (s, e) =>
                 {
                     var culture = Translator.Instance.CurrentCulture == CultureInfo.GetCultureInfo("tr-TR") ?
                         CultureInfo.GetCultureInfo("en-US") : CultureInfo.GetCultureInfo("tr-TR");
+                    Preferences.Default.Set("defaultLang", culture.Name);
                     Translator.Instance.ChangeCulture(culture);
+
+                    await SecureStorage.Default.SetAsync("oauth_token", "secret-oauth-token-value");
+                    string oauthToken = await SecureStorage.Default.GetAsync("oauth_token");
+                    bool success = SecureStorage.Default.Remove("oauth_token");
+                    SecureStorage.Default.RemoveAll();
                 })
             )
         );

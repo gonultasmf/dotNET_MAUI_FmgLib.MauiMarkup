@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Globalization;
+
+using Microsoft.Extensions.Logging;
 
 namespace MyMauiApp;
 
@@ -10,9 +12,15 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+
+        if (!Preferences.Default.ContainsKey("defaultLang"))
+            Preferences.Default.Set("defaultLang", CultureInfo.CurrentCulture.Name == "tr-TR" ? "tr-TR" : "en-US");
+        //Preferences.Default.Remove("first_name");
+
+
         builder
             .UseMauiApp<App>()
-            .UseMauiMarkupLocalization("en-US", "Deneme.json","Localization.json")
+            .UseMauiMarkupLocalization(Preferences.Default.Get("defaultLang", string.Empty), "Deneme.json","Localization.json")
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
